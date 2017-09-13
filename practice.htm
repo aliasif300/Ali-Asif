@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Test Document</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <style>
+    #mytextarea {
+      color: red;
+    }
+    .thingsthatshouldbebold {
+      font-weight: bold;
+    }
+  </style>
+  <script type="text/javascript">
+
+$(function() {
+  $.ajax({
+    url: 'user/details',
+    complete: function(response) {
+      $'.fullname').text(response.fistName + ' ' + response.lastName);
+    },
+    error: function(e) {
+      $('.fullname').css(color: 'red').text(e.toString());
+    });
+
+});
+
+
+  </script>
+</head>
+
+<span id="mytextarea" class="thingsthatshouldbebold fullname">Hello</span>
+<span class="thingsthatshouldbebold">i should be bold and dont have an ID attribute</span>
+</html>
